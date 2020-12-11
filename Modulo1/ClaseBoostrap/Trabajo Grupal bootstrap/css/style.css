@@ -1,0 +1,289 @@
+@charset "UTF-8";
+/*!
+ * Version - 0.1.0
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ * Copyleft 2019-2020 ljaraque
+ */
+
+:root {
+  --text-color-hover: #000000;
+  --bg-color-hover: #ffffff;
+  --body-max-width: 1300px;
+}
+
+body{
+    background-color: #fff;
+    color:white;
+    padding: 0px 0 0;
+}
+
+h4{
+    display: block;
+    font-family: Arial;
+    font-size: 2.5vh;
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
+
+h1 { 
+    display: block;
+    font-size: 8vh;
+    font-family: Courier;
+    margin: 0px 5px 5px 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: lightgray;
+    padding: 20px;
+    border: 10px dashed blue;
+    border-radius: 30px;
+    background-image: url("https://images.pexels.com/photos/1227511/pexels-photo-1227511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"); 
+    background-repeat: repeat; 
+    background-color: #eaeaea;
+    background-clip: padding-box; 
+
+}
+
+.mydiv :hover{
+    background-color:gray;
+}
+
+p{
+    margin: 0 0 0 0;
+    font-size:0.9em;
+    color: white;
+}
+
+ul, ol{
+    display: block;
+    /*list-style-type: disc;*/
+    margin: 5px 0px 5px 0px;
+    padding-left: 20px;
+    font-size:0.9em;
+    color: white;
+}
+
+ul ul{
+    font-size:1em;
+    margin: 0 0 0 0px;
+    padding: 0 0 0 10px;
+    list-style-type: dash;
+}
+
+hr{
+    border-top: 2px solid #bbb;
+}
+
+.grid{
+    width: 90%;
+    max-width: var(--body-max-width);
+    margin: 0 auto;
+    background-color: #fcfcfc;
+    padding: 10px 0 10px 0;
+}
+
+.block{
+    background-color: lightgreen;
+    display: block;
+    padding: 10px 10px 10px 10px;
+    font-size: 2.3vh;
+    text-align: justify;
+    margin: 10px 10px 10px 10px;
+    border: 1px solid #ddd;
+    height: 200px; 
+    overflow: auto;
+    border-radius: 4px;
+}
+
+.block:hover{
+    background-color: var(--bg-color-hover);
+    color: var(--text-color-hover);
+    border: 1px solid red;
+    border-radius: 20px;
+}
+
+.block hr{
+    border-top: 1px solid #bbb;
+}
+
+.block li {
+    padding: 5px 0px;
+    font-style: italic;
+}
+.block:hover hr{
+    border-top: 1px solid var(--text-color-hover);
+}
+
+.block:hover ul{
+    color: var(--text-color-hover);
+}
+
+.block:hover p{
+    color: var(--text-color-hover);
+}
+
+.gutter{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.col-25{
+    width: 25%;
+    float: left;
+}
+
+.col-33{
+    width: 30%;
+    margin: 5px;
+    float: left;
+}
+.col-50{
+    width: 50%;
+    float: left;
+}
+
+.col-52{
+    width: 49%;
+    float: left;
+}
+
+.clear{
+    clear: both;
+    display: block;
+}
+
+/* scroll bar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ccc; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #333; 
+}
+
+.bg-modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 500px;
+    height: 350px;
+    color: black;
+    background-color: white;
+    text-align: center;
+    display: block;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.modal-footer {
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: white;
+    padding-left: inherit;
+    padding-right: inherit;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    background-color: rgb(90, 15, 90);
+}
+
+/* Style the footer */
+.footer {
+    max-width: var(--body-max-width);
+    background-color: gray;
+    padding: 13px 0 13px 0;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Courier;
+    font-size: 3.5vh;
+}
+
+.banner {
+    width: 100%;
+    height: 200px;
+    color: white;
+}
+
+.banner-imagen {
+    background-color:transparent; 
+    background-image: url('https://i.pinimg.com/originals/0b/a3/d6/0ba3d60362c7e6d256cfc1f37156bad9.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+#pieTitulo{
+    margin-left: 45%;
+    margin-right: 45%;
+}
+
+.row1 {
+    color: rgb(0, 0, 0);
+    width: 100%;
+    display: block;
+    padding: 10px 10px 10px 10px;
+    font-size: 2.3vh;
+    text-align: justify;
+    margin: 10px 10px 10px 10px;
+    height: 200px; 
+    overflow: auto;
+}
+
+.footerConfig{
+    text-align: center;
+    background-color: #4A0C6F;
+    color: white;
+    width: 100%;
+    height: 50px;
+}
+
+.footer p {
+    color: white;
+}
+
+/*responsive*/
+@media all and (max-width:1000px) {
+    .col-25{
+        width: 50%;
+    }
+}
+
+@media all and (max-width:800px) {
+    .col-33{
+        width: 50%;
+    }
+    .col-25{
+        width: 50%;
+    }
+}
+
+@media all and (max-width:600px) {
+    .col-50, .col-33, .col-25{
+        width: 100%;
+        float: none;
+    }
+}
+

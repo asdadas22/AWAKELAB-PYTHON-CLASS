@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagos</title>
+</head>
+
+<body style="background-color: powderblue">
+    <h1 style="text-align: center; color: purple">Métodos de Pago</h1>
+    <hr />
+    <p style="font-size: 130%; color: black"><strong> Eliga el método de pago: </strong></p>
+
+    <img src="image/visa_mastercard.jpg" alt="pago_logo" style="width:250px;height:150;">
+
+    <h1 style="color: black;">Tarjeta de crédito: </h1>
+    <form action="formulario.php" method="post">
+        <fieldset>
+            <legend style="color: black;">Datos</legend>
+            <div class="cont1">
+                <label for="mail" style="color: black;">Mail</label>
+                <input type="email" id="mail" name="mail" placeholder="nombre@hosting.com" size="30" required="required"
+                    autofocus>
+                <br>
+                <br>
+                <label for="web" style="color: black;">Web</label>
+                <input type="url" id="web" name="web" placeholder="http://www.ejemplo.com" size="50"
+                    required="required">
+                <br>
+                <br>
+                <label for="licencias" style="color: black;">Número de licencias</label>
+                <input type="number" id="licencias" name="licencias" placeholder="1-10" min="1" max="10"
+                    required="required">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend style="color: black;">Datos Dirección</legend>
+            <div class="cont2">
+                <label for="nombre" style="color: black;">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="nombre y apellidos" size="50">
+                <br>
+                <br>
+                <label for="direccion" style="color: black;">Dirección</label>
+                <textarea name="direccion" id="direccion" placeholder="calle, número, piso, ciudad" cols="30" rows="5"
+                    required="required"></textarea>
+                <br>
+                <br>
+                <label for="codigopostal" style="color: black;">Código Postal</label>
+                <input type="text" id="codigopostal" placeholder="código postal" maxlength="5" required="required">
+                <br>
+                <br>
+                <label for="pais" style="color: black;">País</label>
+                <select name="pais" id="pais" required="required">
+                    <option value="AF" style="color: black;">Argentina</option>
+                    <option value="AL" style="color: black;">Bolivia</option>
+                    <option value="ES" selected style="color: black;">Chile</option>
+
+                </select>
+                <br>
+                <br>
+                <label for="telefono" style="color: black;">Número de teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required="required" placeholder="teléfono con prefijo">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend style="color: black;">Detalle Tarjeta</legend>
+            <div class="cont3">
+                <label for="tarjeta" style="color: black;">Número Tarjeta</label>
+                <input type="number" id="tarjeta" name="tarjeta" required="required"
+                    placeholder="delante de la tarjeta">
+                <br>
+                <br>
+                <label for="cvv" style="color: black;">CVV</label>
+                <input type="number" id="cvv" name="cvv" required="required" placeholder="3 dígitos" max="999">
+                <br>
+                <br>
+                <label for="caducidad" style="color: black;">Fecha Caducidad</label>
+                <input type="month" id="caducidad" name="caducidad" required="required">
+                <br>
+                <br>
+            </div>
+        </fieldset>
+        <br>
+        <input type="submit" value="Enviar">
+        <input class="boton2" type="reset" value="Borrar">
+    </form>
+
+
+
+</body>
+
+</html>
