@@ -20,7 +20,7 @@ for n in range(0,rango_maximo):
     largo_lista_string.append(largo)
     for i in range(0, largo):
         string_aleatorio += random.choice(caracteres)
-        lista.append(string_aleatorio) 
+        lista.append(string_aleatorio)
 print(lista)
 
 # Recorro la lista para sumar el valor del contenido y asi obtener poder calcular

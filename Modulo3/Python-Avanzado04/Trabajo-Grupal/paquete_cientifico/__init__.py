@@ -1,0 +1,1 @@
+from .herenciaGrupal import *
