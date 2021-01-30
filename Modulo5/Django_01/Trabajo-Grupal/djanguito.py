@@ -26,9 +26,12 @@ class myHandler(BaseHTTPRequestHandler):
             self.end_headers()
             # Send the html message
             context = {
-                'titulo':'esta es la pagina renderizada',
-                'hora':str(datetime.datetime.now()),
-                'saludo':'Zdrastvuytie'
+                'titulo':'Pagina de videojuegos',
+                'juego_01': 'Zelda breath of the wild',
+                'descripcion':'The Legend of Zelda: Breath of the Wild es un videojuego de \
+                acción-aventura de 2017 de la serie The Legend of Zelda, desarrollado por \
+                la filial Nintendo EPD en colaboración con Monolith Soft y publicado por \
+                Nintendo para las consolas Wii U y Nintendo Switch.'
             }
             self.wfile.write(render('inicio.html',context))
         
@@ -37,24 +40,50 @@ class myHandler(BaseHTTPRequestHandler):
             self.send_header('Content-type','text/html')
             self.end_headers()
             # Send the html message
-            self.wfile.write(("<b>Empresa</b>"
-                        + "<br><br> La hora actual es:" + str(datetime.datetime.now())).encode('utf-8'))
+            context = {
+                'titulo':'Esta es una pagina de videojuegos',
+                'hora':str(datetime.datetime.now()),
+                'saludo':'Se venden juegos de ps5'
+            }
+            self.wfile.write(render('empresa.html', context))
 
         elif self.path == '/contacto':
             self.send_response(200)
             self.send_header('Content-type','text/html')
             self.end_headers()
             # Send the html message
-            self.wfile.write(("<b>Contacto</b>"
-                        + "<br><br> La hora actual es:" + str(datetime.datetime.now())).encode('utf-8'))
+            context = {
+                'titulo':'Esta es la pagina de contaco',
+                'hora':str(datetime.datetime.now()),
+                'saludo':'CONTACTANOS!'
+            }
+            self.wfile.write(render('contacto.html', context))
 
-        elif self.path == '/static/img/Putin.jpeg':
-            content, mime = get_static('static/img/Putin.jpeg')
+        elif self.path[0:7] == '/static':
+            content, mime = get_static(self.path[1:])
             self.send_response(200)
             self.send_header('Content-type',mime)
             self.end_headers()
             # Send the html message
             self.wfile.write(content)
+
+    def do_POST(self):
+        if self.path == '/contacto':
+            self.send_response(200)
+            self.send_header('Content-type','text/html')
+            self.end_headers()
+
+            # obtenemos los datos desde el request POST
+            largo_contenido = int(self.headers['Content-Length'])
+            data = self.rfile.read(largo_contenido).decode('utf-8')
+            
+
+            context = {
+                'titulo':'Esta es la pagina de contaco',
+                'mensaje':'EL CONTACTO HA SIDO EXITOSO',
+                'data': data
+            }
+            self.wfile.write(render('contacto_exito.html', context))
             
             
             
