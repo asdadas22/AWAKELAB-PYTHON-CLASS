@@ -1,7 +1,5 @@
 import paquete_cientifico as pc
 
-
-
 if __name__ == "__main__":
     financiera_01_ref = pc.crear_financiera("Karol-Dance. consultores")
     print(financiera_01_ref)
