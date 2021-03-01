@@ -1,0 +1,449 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 12.4
+-- Dumped by pg_dump version 12.4
+
+-- Started on 2021-02-16 19:56:08
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 205 (class 1259 OID 33847)
+-- Name: SensoresApp_sensoracceso; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."SensoresApp_sensoracceso" (
+    id integer NOT NULL,
+    nombre_sensor character varying(50) NOT NULL,
+    fecha_sensada date NOT NULL
+);
+
+
+ALTER TABLE public."SensoresApp_sensoracceso" OWNER TO postgres;
+
+--
+-- TOC entry 204 (class 1259 OID 33845)
+-- Name: SensoresApp_sensoracceso_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public."SensoresApp_sensoracceso_id_seq"
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public."SensoresApp_sensoracceso_id_seq" OWNER TO postgres;
+
+--
+-- TOC entry 2868 (class 0 OID 0)
+-- Dependencies: 204
+-- Name: SensoresApp_sensoracceso_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public."SensoresApp_sensoracceso_id_seq" OWNED BY public."SensoresApp_sensoracceso".id;
+
+
+--
+-- TOC entry 207 (class 1259 OID 33855)
+-- Name: SensoresApp_sensorgasolina; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."SensoresApp_sensorgasolina" (
+    id integer NOT NULL,
+    nombre_sensor character varying(50) NOT NULL,
+    fecha_sensada date NOT NULL,
+    nivel character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public."SensoresApp_sensorgasolina" OWNER TO postgres;
+
+--
+-- TOC entry 206 (class 1259 OID 33853)
+-- Name: SensoresApp_sensorgasolina_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public."SensoresApp_sensorgasolina_id_seq"
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public."SensoresApp_sensorgasolina_id_seq" OWNER TO postgres;
+
+--
+-- TOC entry 2869 (class 0 OID 0)
+-- Dependencies: 206
+-- Name: SensoresApp_sensorgasolina_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public."SensoresApp_sensorgasolina_id_seq" OWNED BY public."SensoresApp_sensorgasolina".id;
+
+
+--
+-- TOC entry 209 (class 1259 OID 33863)
+-- Name: SensoresApp_sensorpuerta; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."SensoresApp_sensorpuerta" (
+    id integer NOT NULL,
+    nombre_sensor character varying(50) NOT NULL,
+    fecha_sensada date NOT NULL
+);
+
+
+ALTER TABLE public."SensoresApp_sensorpuerta" OWNER TO postgres;
+
+--
+-- TOC entry 208 (class 1259 OID 33861)
+-- Name: SensoresApp_sensorpuerta_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public."SensoresApp_sensorpuerta_id_seq"
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public."SensoresApp_sensorpuerta_id_seq" OWNER TO postgres;
+
+--
+-- TOC entry 2870 (class 0 OID 0)
+-- Dependencies: 208
+-- Name: SensoresApp_sensorpuerta_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public."SensoresApp_sensorpuerta_id_seq" OWNED BY public."SensoresApp_sensorpuerta".id;
+
+
+--
+-- TOC entry 211 (class 1259 OID 33871)
+-- Name: SensoresApp_sensortemperatura; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."SensoresApp_sensortemperatura" (
+    id integer NOT NULL,
+    nombre_sensor character varying(50) NOT NULL,
+    fecha_sensada date NOT NULL
+);
+
+
+ALTER TABLE public."SensoresApp_sensortemperatura" OWNER TO postgres;
+
+--
+-- TOC entry 210 (class 1259 OID 33869)
+-- Name: SensoresApp_sensortemperatura_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public."SensoresApp_sensortemperatura_id_seq"
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public."SensoresApp_sensortemperatura_id_seq" OWNER TO postgres;
+
+--
+-- TOC entry 2871 (class 0 OID 0)
+-- Dependencies: 210
+-- Name: SensoresApp_sensortemperatura_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public."SensoresApp_sensortemperatura_id_seq" OWNED BY public."SensoresApp_sensortemperatura".id;
+
+
+--
+-- TOC entry 203 (class 1259 OID 33836)
+-- Name: django_migrations; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.django_migrations (
+    id integer NOT NULL,
+    app character varying(255) NOT NULL,
+    name character varying(255) NOT NULL,
+    applied timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.django_migrations OWNER TO postgres;
+
+--
+-- TOC entry 202 (class 1259 OID 33834)
+-- Name: django_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.django_migrations_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_migrations_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2872 (class 0 OID 0)
+-- Dependencies: 202
+-- Name: django_migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.django_migrations_id_seq OWNED BY public.django_migrations.id;
+
+
+--
+-- TOC entry 2713 (class 2604 OID 33850)
+-- Name: SensoresApp_sensoracceso id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."SensoresApp_sensoracceso" ALTER COLUMN id SET DEFAULT nextval('public."SensoresApp_sensoracceso_id_seq"'::regclass);
+
+
+--
+-- TOC entry 2714 (class 2604 OID 33858)
+-- Name: SensoresApp_sensorgasolina id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."SensoresApp_sensorgasolina" ALTER COLUMN id SET DEFAULT nextval('public."SensoresApp_sensorgasolina_id_seq"'::regclass);
+
+
+--
+-- TOC entry 2715 (class 2604 OID 33866)
+-- Name: SensoresApp_sensorpuerta id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."SensoresApp_sensorpuerta" ALTER COLUMN id SET DEFAULT nextval('public."SensoresApp_sensorpuerta_id_seq"'::regclass);
+
+
+--
+-- TOC entry 2716 (class 2604 OID 33874)
+-- Name: SensoresApp_sensortemperatura id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."SensoresApp_sensortemperatura" ALTER COLUMN id SET DEFAULT nextval('public."SensoresApp_sensortemperatura_id_seq"'::regclass);
+
+
+--
+-- TOC entry 2712 (class 2604 OID 33839)
+-- Name: django_migrations id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.django_migrations ALTER COLUMN id SET DEFAULT nextval('public.django_migrations_id_seq'::regclass);
+
+
+--
+-- TOC entry 2856 (class 0 OID 33847)
+-- Dependencies: 205
+-- Data for Name: SensoresApp_sensoracceso; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."SensoresApp_sensoracceso" (id, nombre_sensor, fecha_sensada) FROM stdin;
+1	sensor nuevo 1	2020-01-12
+2	sensor viejo 2	2018-11-07
+3	sensor nuevo 3	2011-12-01
+4	sensor viejo 3	2019-01-02
+5	sensorFX	2021-02-03
+6	sensor1234	2015-03-04
+7	ModelSensor	2016-04-05
+8	GreatSensor	2017-05-06
+9	OpenSensor	2012-06-08
+10	Old sensor	2014-07-09
+\.
+
+
+--
+-- TOC entry 2858 (class 0 OID 33855)
+-- Dependencies: 207
+-- Data for Name: SensoresApp_sensorgasolina; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."SensoresApp_sensorgasolina" (id, nombre_sensor, fecha_sensada, nivel) FROM stdin;
+1	sensor nuevo 1	2020-01-12	bajo
+2	sensor viejo 2	2018-11-07	bajo
+3	sensor nuevo 3	2011-12-01	medio
+4	sensor viejo 3	2019-01-02	medio
+5	sensorFX	2021-02-03	alto
+6	sensor1234	2015-03-04	alto
+7	ModelSensor	2016-04-05	bajo
+8	GreatSensor	2017-05-06	medio
+9	OpenSensor	2012-06-08	alto
+10	Old sensor	2014-07-09	bajo
+\.
+
+
+--
+-- TOC entry 2860 (class 0 OID 33863)
+-- Dependencies: 209
+-- Data for Name: SensoresApp_sensorpuerta; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."SensoresApp_sensorpuerta" (id, nombre_sensor, fecha_sensada) FROM stdin;
+1	sensor nuevo 1	2020-01-12
+2	sensor viejo 2	2018-11-07
+3	sensor nuevo 3	2011-12-01
+4	sensor viejo 3	2019-01-02
+5	sensorFX	2021-02-03
+6	sensor1234	2015-03-04
+7	ModelSensor	2016-04-05
+8	GreatSensor	2017-05-06
+9	OpenSensor	2012-06-08
+10	Old sensor	2014-07-09
+\.
+
+
+--
+-- TOC entry 2862 (class 0 OID 33871)
+-- Dependencies: 211
+-- Data for Name: SensoresApp_sensortemperatura; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."SensoresApp_sensortemperatura" (id, nombre_sensor, fecha_sensada) FROM stdin;
+1	sensor nuevo 1	2020-01-12
+2	sensor viejo 2	2018-11-07
+3	sensor nuevo 3	2011-12-01
+4	sensor viejo 3	2019-01-02
+5	sensorFX	2021-02-03
+6	sensor1234	2015-03-04
+7	ModelSensor	2016-04-05
+8	GreatSensor	2017-05-06
+9	OpenSensor	2012-06-08
+10	Old sensor	2014-07-09
+\.
+
+
+--
+-- TOC entry 2854 (class 0 OID 33836)
+-- Dependencies: 203
+-- Data for Name: django_migrations; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.django_migrations (id, app, name, applied) FROM stdin;
+1	SensoresApp	0001_initial	2021-02-16 18:43:08.276696-03
+2	SensoresApp	0002_auto_20210216_1943	2021-02-16 19:43:41.614872-03
+\.
+
+
+--
+-- TOC entry 2873 (class 0 OID 0)
+-- Dependencies: 204
+-- Name: SensoresApp_sensoracceso_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public."SensoresApp_sensoracceso_id_seq"', 10, true);
+
+
+--
+-- TOC entry 2874 (class 0 OID 0)
+-- Dependencies: 206
+-- Name: SensoresApp_sensorgasolina_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public."SensoresApp_sensorgasolina_id_seq"', 10, true);
+
+
+--
+-- TOC entry 2875 (class 0 OID 0)
+-- Dependencies: 208
+-- Name: SensoresApp_sensorpuerta_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public."SensoresApp_sensorpuerta_id_seq"', 10, true);
+
+
+--
+-- TOC entry 2876 (class 0 OID 0)
+-- Dependencies: 210
+-- Name: SensoresApp_sensortemperatura_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public."SensoresApp_sensortemperatura_id_seq"', 10, true);
+
+
+--
+-- TOC entry 2877 (class 0 OID 0)
+-- Dependencies: 202
+-- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.django_migrations_id_seq', 2, true);
+
+
+--
+-- TOC entry 2720 (class 2606 OID 33852)
+-- Name: SensoresApp_sensoracceso SensoresApp_sensoracceso_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."SensoresApp_sensoracceso"
+    ADD CONSTRAINT "SensoresApp_sensoracceso_pkey" PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2722 (class 2606 OID 33860)
+-- Name: SensoresApp_sensorgasolina SensoresApp_sensorgasolina_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."SensoresApp_sensorgasolina"
+    ADD CONSTRAINT "SensoresApp_sensorgasolina_pkey" PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2724 (class 2606 OID 33868)
+-- Name: SensoresApp_sensorpuerta SensoresApp_sensorpuerta_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."SensoresApp_sensorpuerta"
+    ADD CONSTRAINT "SensoresApp_sensorpuerta_pkey" PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2726 (class 2606 OID 33876)
+-- Name: SensoresApp_sensortemperatura SensoresApp_sensortemperatura_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."SensoresApp_sensortemperatura"
+    ADD CONSTRAINT "SensoresApp_sensortemperatura_pkey" PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2718 (class 2606 OID 33844)
+-- Name: django_migrations django_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.django_migrations
+    ADD CONSTRAINT django_migrations_pkey PRIMARY KEY (id);
+
+
+-- Completed on 2021-02-16 19:56:08
+
+--
+-- PostgreSQL database dump complete
+--
+

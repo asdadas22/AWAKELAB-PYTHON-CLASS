@@ -9,3 +9,5 @@
 *.tar
 *.zip
 util_extra/
+*.pyc
+migrations/
