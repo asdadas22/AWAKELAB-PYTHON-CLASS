@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block contenido %}
+{% load static  %}  
+    <link rel="stylesheet" href="{% static 'crear_pacientes/css/style_enfer.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'crear_pacientes/css/style.css' %}" />
+    
+    <script src="{% static 'crear_pacientes/js/app.js' %}"></script>
+    <script src="https://kit.fontawesome.com/c4c695cb79.js" crossorigin="anonymous"></script>
+
+    <h1>Editando el examen con id: {{id}}</h1>
+
+    <form action="" method="POST" novalidate>
+        {% csrf_token %}
+        <table>
+            {{formulario.as_table}}
+        </table>
+        <button type="submit" class="btn btn-success" style="margin: 5px;">Actualizar examen</button>
+        <a href="{% url 'crear_examenes:crear_examenes' %}"><input class="btn btn-dark" type="button" value="Cancelar" style="margin: 5px;"></a>
+    </form>
+
+{% endblock%}

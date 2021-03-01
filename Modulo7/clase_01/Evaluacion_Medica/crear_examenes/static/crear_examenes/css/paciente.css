@@ -1,0 +1,120 @@
+/*
+Awakelab
+Full Stack Python 2020
+*/
+ 
+#competencias, 
+#contacto {
+    padding-top: 60px;
+    min-height: 700px;
+}
+
+
+#principal {
+    padding: 100px 5% 20px;
+    min-height: 200px;
+    }
+
+#competencias > div >  h3 {
+    color: rgb(0, 0, 0);
+}
+
+#equipo {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#enlaces {
+    color:white;
+    padding-top: 60px;
+    min-height: 100%;
+}
+
+.navbar a {
+    font-weight: bold;
+}
+
+.navbar-dark {
+    background-color:rgb(71, 58, 145);
+}
+.grad {
+    background-image: linear-gradient(to bottom right, rgb(71, 58, 145), rgb(85, 145, 223));
+  }
+
+h1, h2, h3, h4, h5, h6, .navbar, .modal { 
+    font-family: 'Poiret One', cursive;
+}
+
+.bg-principal {
+    background-image: url("../img/GeoSag.jpg");
+    background-size: cover;
+}
+
+.jumbotron {
+    color: rgb(255, 249, 249);
+    font-weight: bolder;
+    background: rgb(0, 0, 0); /* Para navegadores antiguos */
+    background: rgba(59, 7, 71, 0.877); 
+ }
+
+ .card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-color: black;
+    
+}
+
+.card-header {
+    border-color: black;
+}
+.media {
+    margin: 20px 5% 50px 10%;
+}
+
+#contact-form { 
+    padding-top: 3rem; 
+} 
+
+textarea { 
+    resize: none; 
+}
+
+.footer p {
+    display: inline;
+}
+
+.contenedor {
+    background-image: linear-gradient( rgb(140, 159, 223),  rgb(71, 58, 145));
+}
+/* Cards responsivas */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Hago flotar 4 columnas una al lado de otra */
+  .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Elimino el margen extra entre las columnas */
+  .row {margin: 0 -5px;}
+  
+  /*  */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }

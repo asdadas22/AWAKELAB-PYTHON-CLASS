@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block contenido %}
+{% load static  %}  
+    <link rel="stylesheet" href="{% static 'crear_pacientes/css/style_enfer.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'crear_pacientes/css/style.css' %}" />
+    
+    <script src="{% static 'crear_pacientes/js/app.js' %}"></script>
+    <script src="https://kit.fontawesome.com/c4c695cb79.js" crossorigin="anonymous"></script>
+
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{formulario_busqueda.as_table}}
+      <button type="submit" class="btn btn-success">Buscar</button>
+    <div class="card card-info">
+        <div class="card-header">
+          <h2>Paciente</h2>
+        </div>
+        <div class="card-body">
+          <table class="table" id="tablaEnfermedades">
+            <thead>
+              <tr>
+                <th>Rut</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td width="15%"> {{rut}}</td>
+                    <td> {{nombre}}</td>
+                    <td> {{edad}}</td>
+                    <td width="25%"> {{fecha_nacimiento}}</td>
+                </tr>
+            </tbody>
+          </table>
+          <span id="lblCantidadRegistro"></span>
+            
+        </div>
+        </div>
+    </form>
+{% endblock%}

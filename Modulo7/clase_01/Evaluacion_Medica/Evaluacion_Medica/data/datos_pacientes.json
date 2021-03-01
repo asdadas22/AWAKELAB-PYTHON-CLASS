@@ -1,0 +1,119 @@
+{
+    "pacientes": [
+        {
+            "rut": "00.000.000-0",
+            "nombre": "Fence",
+            "edad": 57,
+            "fecha_nacimiento": "2020-12-12",
+            "examenes": [
+                {
+                    "fecha": "2020-10-28",
+                    "hemograma": 160,
+                    "orina": 160,
+                    "colesterol": 150,
+                    "glucosa": 170
+                },
+                {
+                    "fecha": "2020-10-27",
+                    "hemograma": 100,
+                    "orina": 100,
+                    "colesterol": 100,
+                    "glucosa": 100
+                },
+                {
+                    "fecha": "2020-10-28",
+                    "hemograma": 200,
+                    "orina": 100,
+                    "colesterol": 170,
+                    "glucosa": 110
+                },
+                {
+                    "fecha": "2020-10-27",
+                    "hemograma": 110,
+                    "orina": 120,
+                    "colesterol": 105,
+                    "glucosa": 145
+                }
+            ]
+        },
+        {
+            "rut": "1.100.100-2",
+            "nombre": "Ruben",
+            "edad": 20,
+            "fecha_nacimiento": "2010-10-10",
+            "examenes": [
+                {
+                    "fecha": "2020-10-28",
+                    "hemograma": 180,
+                    "orina": 176,
+                    "colesterol": 132,
+                    "glucosa": 122
+                },
+                {
+                    "fecha": "2020-10-27",
+                    "hemograma": 100,
+                    "orina": 100,
+                    "colesterol": 100,
+                    "glucosa": 100
+                }
+            ]
+        },
+        {
+            "rut": "1.110.102-2",
+            "nombre": "Ruben",
+            "edad": 23,
+            "fecha_nacimiento": "2010-10-10",
+            "examenes": [
+                {
+                    "fecha": "2020-10-28",
+                    "hemograma": 160,
+                    "orina": 170,
+                    "colesterol": 150,
+                    "glucosa": 111
+                },
+                {
+                    "fecha": "2020-10-27",
+                    "hemograma": 100,
+                    "orina": 123,
+                    "colesterol": 100,
+                    "glucosa": 134
+                },
+                {
+                    "fecha": "2020-10-28",
+                    "hemograma": 160,
+                    "orina": 122,
+                    "colesterol": 150,
+                    "glucosa": 145
+                },
+                {
+                    "fecha": "2020-10-27",
+                    "hemograma": 100,
+                    "orina": 110,
+                    "colesterol": 100,
+                    "glucosa": 156
+                },
+                {
+                    "fecha": "2020-10-28",
+                    "hemograma": 160,
+                    "orina": 178,
+                    "colesterol": 150,
+                    "glucosa": 110
+                },
+                {
+                    "fecha": "2020-10-27",
+                    "hemograma": 100,
+                    "orina": 123,
+                    "colesterol": 100,
+                    "glucosa": 156
+                }
+            ]
+        },
+        {
+            "rut": "1.100.100-3",
+            "nombre": "dqwd",
+            "edad": 31,
+            "fecha_nacimiento": "2010-10-10",
+            "examenes": []
+        }
+    ]
+}

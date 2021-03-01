@@ -1,0 +1,22 @@
+{% extends "base_login.html" %}
+{% block contenido %}
+{% load static  %}  
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'crear_pacientes/css/style.css' %}" />
+    
+
+    <!-- Section: Principal -->
+    <div class="container-fluid bg-principal" id="principal">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="jumbotron jumbotron-main">
+            <h1>Home page</h1>
+            <h3>Encuentra los mejores planes de salud en SOFTMED</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock%}

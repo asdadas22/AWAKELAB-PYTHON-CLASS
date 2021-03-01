@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block contenido %}
+{% load static  %}  
+    <link rel="stylesheet" href="{% static 'crear_pacientes/css/style_enfer.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'crear_pacientes/css/style.css' %}" />
+    
+    <script src="{% static 'crear_pacientes/js/app.js' %}"></script>
+    <script src="https://kit.fontawesome.com/c4c695cb79.js" crossorigin="anonymous"></script>
+
+    <!-- Section: Principal -->
+    <div class="container-fluid bg-principal" id="principal">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="jumbotron jumbotron-main">
+            <h1>Registro de Pacientes</h1>
+            <h3>Haz seguimiento a todos los pacientes de manera cómoda y ordenada</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Section: Principal -->
+
+    {% if messages %}
+      {% for mensaje in messages %}
+      <h3>{{mensaje}}</h3>
+      {% endfor %}
+    {% endif %}
+
+      <div class="card card-info">
+          <div class="card-header">
+            <h2>Listado de Pacientes</h2>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Rut</th>
+                  <th>Nombre</th>
+                  <th>Edad</th>
+                  <th>Fecha de Nacimiento</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for paciente in pacientes %}
+                <form action="" method="POST">
+                  {% csrf_token %}
+                  <tr>
+                          <td width="15%"> {{paciente.rut}}</td>
+                          <td> {{paciente.nombre}}</td>
+                          <td> {{paciente.edad}}</td>
+                          <td width="25%"> {{paciente.fecha_nacimiento}}</td>
+                          <td>
+                            <a href="{% url 'crear_pacientes:eliminar_paciente' rut=paciente.rut %}" class="btn btn-danger" style="
+                            margin: 5px;">Borrar</a>
+                            <a href="{% url 'crear_pacientes:actualizar_paciente' rut=paciente.rut %}" class="btn btn-success" style="
+                            margin: 5px;">Editar</a>
+                          </td>
+                  </tr>
+                </form>
+                {% endfor %}
+              </tbody>
+            </table>
+            <span id="lblCantidadRegistro"></span>
+              
+          </div>
+        <!-- Botón Para crear nuevo registro-->
+        <div class="card-footer border-success text-right ">
+          <div class="btn-group mr-2  justify-content-between">
+            <div class="input-group-prepend">
+              <div class="input-group-text" id="btnGroupAddon">
+                <i class="fas fa-plus-circle"></i></div>
+            </div>
+            <input type="button" value="Nuevo registro" class="btn btn-success" aria-describedby="btnGroupAddon"
+              data-toggle="modal" data-target="#modalNuevaData">
+          </div>
+        </div>
+      </div>
+
+
+
+  <!-- MODAL FORMS -->
+  <!-- MODAL FORM NUEVO REGISTRO PACIENTE -->
+  <div class="modal fade" id="modalNuevaData" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <form  action="" method="POST" novalidate>
+          <div class="modal-header">
+            <p class="modal-title" id="profile-modal-label myModalLabel"><strong>Nuevo registro de paciente</strong></p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <strong>
+              {% csrf_token %}
+              <table>
+                {{formulario.as_table}}
+              </table>
+            </strong>
+          </div>
+          <div class="modal-footer">
+            <input type="hidden" name="elemento" value="paciente">
+            <button type="submit" class="btn btn-danger" id="anadirRegistro">Añadir</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL FORM ELIMINAR REGISTRO ENFERMEDAD -->
+  <div class="modal" id="modalEliminaData" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title" id="profile-modal-label"><strong>Eliminar registro</strong></p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span>
+          </button>
+
+        </div>
+        <div class="modal-body">
+          <img src="{% static 'crear_pacientes/img/delete.png'%}" width="10%">
+          <span><strong>¿Desea eliminar el registro?</strong></span>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger boton_eliminar">Eliminar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!-- END MODAL FORMS -->
+
+
+
+{% endblock%}

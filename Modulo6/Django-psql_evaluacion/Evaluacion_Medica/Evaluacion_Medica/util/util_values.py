@@ -1,0 +1,2 @@
+IS_DEBUG_ACTIVE = True
+IS_LOGIN_ACTIVE = False

@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block contenido %}
+{% load static  %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/c4c695cb79.js" crossorigin="anonymous"></script>   
+<link rel="stylesheet" href="{% static 'crear_examenes/css/style.css' %}" />
+<script src="{% static 'crear_examenes/js/app.js' %}"></script>
+
+    <!-- Section: Principal -->
+    <div class="container-fluid bg-principal" id="principal">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="jumbotron jumbotron-main">
+            <h1>Registro de Examenes</h1>
+            <h3>Haz seguimiento a tus pacientes de manera cómoda y ordenada</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Section: Principal -->
+
+    <!-- End Section: TABLA PACIENTES -->
+      
+    <!-- Section: Charts de examenes realizados -->
+
+      {% if messages %}
+        {% for mensaje in messages %}
+        <h3>{{mensaje}}</h3>
+        {% endfor %}
+      {% endif %}
+      <div class="card card-info">
+        <form action="" method="POST" name="busqueda">
+          {% csrf_token %}
+          {{formulario_busqueda.as_table}}
+          <button type="submit" class="btn btn-success">Buscar</button>
+        </form>
+      </div>
+
+        <!-- End Section: Principal -->
+      <div class="card card-info">
+        <div class="card-header">
+          <h2>Informacion paciente</h2>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Rut</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Fecha de Nacimiento</th>
+              </tr>
+            </thead>
+            <tbody>
+                    <td width="15%"> {{paciente.rut}}</td>
+                    <td> {{paciente.nombre}}</td>
+                    <td> {{paciente.edad}}</td>
+                    <td width="25%"> {{paciente.fecha_nacimiento}}</td>
+            </tbody>
+          </table>
+          <span id="lblCantidadRegistro"></span>
+            
+        </div>
+      </div>
+
+        <form action="" method="GET" novalidate name="agregar">
+            {% csrf_token %}
+            <div class="card-header">
+              <h2>Registro de Examenes</h2>
+            </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Fecha realización</th>
+                  <th>Orina</th>
+                  <th>Hemograma</th>
+                  <th>Colesterol</th>
+                  <th>Glucosa</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for examen in examenes %}
+                <tr> 
+                  <td width="15%"> {{examen.fecha}}</td>
+                  <td width="15%"> {{examen.orina}}</td>
+                  <td> {{examen.hemograma}}</td>
+                  <td> {{examen.colesterol}}</td>
+                  <td width="20%"> {{examen.glucosa}}</td>
+                  <td>
+                    <a href="{% url 'crear_examenes:actualizar_examen' id=examen.id %}" class="btn btn-success" style="
+                    margin: 5px; color: white;">Editar</a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            <span id="lblCantidadRegistro"></span>
+              
+          </div>
+          <!-- Botón Para crear nuevo registro-->
+          <div class="card-footer border-success text-right ">
+            <div class="btn-group mr-2  justify-content-between">
+              <div class="input-group-prepend">
+                <div class="input-group-text" id="btnGroupAddon">
+                  <i class="fas fa-plus-circle"></i></div>
+              </div>
+              <input type="button" value="Nuevo registro" class="btn btn-success" aria-describedby="btnGroupAddon"
+                data-toggle="modal" data-target="#modalNuevaData">
+            </div>
+          </div>
+        </form>  
+      </div>
+      
+      <!-- MODAL FORMS -->
+      <form action="" method="POST" name="Crear">
+        <div class="modal fade" id="modalNuevaData" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content" style="height: 630px;">
+              <div class="modal-header">
+                <h5 class="modal-title" style="height: 20px;">Agregar Examen</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                {% csrf_token %}
+                <table>
+                  {{formulario.as_table}}
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-success">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+{% endblock %}
+    
